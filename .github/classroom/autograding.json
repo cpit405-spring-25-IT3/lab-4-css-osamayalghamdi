@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Lab4Test",
+      "setup": "",
+      "run": "npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 5,
+      "points": 100
+    }
+  ]
+}

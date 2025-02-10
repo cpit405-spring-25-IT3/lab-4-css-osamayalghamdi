@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "validate": "html-validator ../ || echo 'HTML is not valid'",
+    "test": "node lab4.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "cheerio": "^1.0.0",
+    "w3c-html-validator": "^1.8.2"
+  }
+}

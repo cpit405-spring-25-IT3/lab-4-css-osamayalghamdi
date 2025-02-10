@@ -1,0 +1,44 @@
+name: Autograding Tests
+'on':
+  push:
+    branches:
+      - main
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '23'
+    
+    - name: Install dependencies
+      run: cd test && npm install
+    
+    - name: Validate HTML
+      run: cd test && npm run validate
+    
+    - name: Lab4Test
+      id: lab4test
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Lab4Test
+        command: cd test && npm test
+        timeout: 5
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        LAB4TEST_RESULTS: "${{steps.lab4test.outputs.result}}"
+      with:
+        runners: lab4test
