@@ -1,55 +1,38 @@
 body {
     background-color: #F0F0F0;
-    padding: 30px;
+    padding: 20px;
 }
+h1 {
+    color: #8da9c7;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 #content {
     background-color: #A1E3F9;
     padding: 20px;
-    margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 0 20px #474747;
-    width: fit-content;
 }
-#form {
-    background-color: #A1E3F9;
-    grid-template-columns: 0.5fr 0.5fr;
-    padding: 15px;
-    border-radius: 10px;
-    width: fit-content;
-}
-#submit {
-    background-color: #3674B5;
-    width: fit-content;
-}
-#text {
-    text-align: center;
-    text-size-adjust: 20px;
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 label {
-    font-size: 20px;
-    color: #3674B5;
-    font-weight: 800;
-    text-align: center;
+    font-weight: 500;
+    color: #000;
 }
 input, select, textarea {
-    width: 100%;
-    padding: 9px;
-    border-radius: 5px;
-    border-color: #000000;
+    border: 2px solid #dddbdb;
+    box-shadow: 2px 2px 1px #3674B5;
+    padding: 14px;
 }
+input[type = "date"], input[type = "number"] {
+    box-sizing: border-box;
+}
+
+
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #3674B5;
-}
-select  {
-    background-color: #cfd7f1;
-}
-textarea {
-    height: 100px;
-}
-@media(min-width: 400px) {
-    #form {
-        grid-template-columns: 1fr 1fr;
-    }
-    
 }
